@@ -7,4 +7,5 @@
 
 ## HTTP系列
 - [HTTP版本](https://github.com/randomtc/study-notes/issues/2)
+- [HTTP缓存](https://github.com/randomtc/study-notes/issues/3)
 
