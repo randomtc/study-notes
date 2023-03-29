@@ -6,3 +6,5 @@
 - [提交操作自定义hooks](https://github.com/randomtc/study-notes/blob/main/code/useConfirm.ts)
 
 ## HTTP系列
+- [HTTP版本](https://github.com/randomtc/study-notes/issues/2)
+
