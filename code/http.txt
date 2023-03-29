@@ -11,3 +11,18 @@ URL：统一资源定位器
 URN：永久统一资源定位符  在资源移动后还能找到 目前还没有成熟的使用方案
 
 HTTP报文格式
+
+浏览器允许 link img script 标签上写路径 允许跨域      jsonp
+
+CORS跨域限制以及预请求    
+Request Method：OPTIONS 
+服务端根据不同的Method做不同的操作
+根据OPTIONS获得服务端的认可告诉浏览器实际发的请求允许
+
+缓存 Cache-Control
+可缓存性：public private no-cache
+到期：max-age=<seconds>  s-maxage=<seconds>  max-stale=<seconds>
+重新验证：must-revalidate  proxy-revalidate
+no-store：本地和代理服务器都不能缓存   
+no-catche可以再本地进行缓存  每次去验证一下 服务器告诉你可以使用本地的缓存 你才能用  
+no-transform：代理服务器不要改动我的内容
