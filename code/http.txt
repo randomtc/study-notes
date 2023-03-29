@@ -26,3 +26,13 @@ Request Method：OPTIONS
 no-store：本地和代理服务器都不能缓存   
 no-catche可以再本地进行缓存  每次去验证一下 服务器告诉你可以使用本地的缓存 你才能用  
 no-transform：代理服务器不要改动我的内容
+
+浏览器长缓存   max-age设置为一年
+前端打包的文件名上加哈希码  
+内容没变哈希码没变 用的还是浏览器缓存的静态资源缓存
+内容变化哈希码变化 发起的请求就是新的静态资源请求 达到更新缓存的需求
+
+缓存验证 
+验证头
+Last—Modified：上次修改时间  配合If-Modified-Since或者If-Unmodified-Since使用  对比上次修改时间以验证资源是否需要更新
+Etag：数据签名  配合If-Match或者If-Non-Match 对比资源的签名判断是否使用缓存
