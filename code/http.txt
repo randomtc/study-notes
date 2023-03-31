@@ -36,3 +36,36 @@ no-transform：代理服务器不要改动我的内容
 验证头
 Last—Modified：上次修改时间  配合If-Modified-Since或者If-Unmodified-Since使用  对比上次修改时间以验证资源是否需要更新
 Etag：数据签名  配合If-Match或者If-Non-Match 对比资源的签名判断是否使用缓存
+
+cookie没有设置过期时间 浏览器关闭就失效了
+max-age=200设置过期时间
+HttpOnly禁止js访问cookie
+
+
+http长链接
+
+
+
+Network Name 右键
+Name：请求的URL路径和资源名称。
+Method：HTTP请求方法，如GET、POST等。
+Status：HTTP响应的状态码，如200、404、500等。
+Type：HTTP响应的内容类型，如text/html、application/json等。
+Initiator：触发该请求的资源类型和名称，如script、img等。
+Size：HTTP请求和响应的大小（字节）。
+Time：请求开始时间、DNS解析时间、TCP连接时间、服务器响应时间、内容传输时间等指标，可以用来诊断请求的性能问题。
+Waterfall：以图形化的方式展示了请求的各个阶段所花费的时间，包括重定向、DNS解析、TCP连接、TLS握手、请求发送、服务器响应和内容传输等。
+Protocol：HTTP请求所使用的协议，如HTTP/1.1、HTTP/2等。
+Domain：请求的主机名或IP地址。
+Remote Address：远程服务器的IP地址和端口号。
+Request Headers：HTTP请求头部信息，包括User-Agent、Referer、Cookie等。
+Response Headers：HTTP响应头部信息，包括Server、Content-Type、Set-Cookie等。
+Timing：请求的各个阶段的时间指标，包括blocked、dns、connect、send、wait、receive等。
+Initiator Type：触发该请求的资源类型，如script、stylesheet、image等。
+Initiator Column：触发该请求的资源所在的列号。
+Initiator Line：触发该请求的资源所在的行号。
+Initiator Function：触发该请求的JavaScript函数名称。
+Resource Priority：资源的优先级，可以是Very High、High、Medium、Low或Very Low。
+Cache Control：HTTP缓存控制指令，包括max-age、no-cache、no-store等。
+
+数据协商
