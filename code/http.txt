@@ -69,3 +69,5 @@ Resource Priority：资源的优先级，可以是Very High、High、Medium、Lo
 Cache Control：HTTP缓存控制指令，包括max-age、no-cache、no-store等。
 
 数据协商
+
+Redirect

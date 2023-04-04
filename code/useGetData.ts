@@ -27,7 +27,7 @@ type Res<T> = {
 
 const useGetData = <T>(networkRequest: any, addParams?: Record<string, any>) => {
     const [data, setData] = useState<ResData<T>>()
-    const [params, setParams] = useState<Record<string, any>>({ page: 1, page_size: 10 })
+    const [params, setParams] = useState<Record<string, any>>({ page: 1, page_size: 10, ...addParams })
     const [trigger, setTrigger] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -39,7 +39,7 @@ const useGetData = <T>(networkRequest: any, addParams?: Record<string, any>) => 
     async function sendRequest() {
         setLoading(true)
         try {
-            const res: Res<T> = await networkRequest({ ...params, ...addParams })
+            const res: Res<T> = await networkRequest(params)
             if (res?.code === 200) {
                 setData(res?.data)
             } else {
