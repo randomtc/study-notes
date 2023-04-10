@@ -71,3 +71,7 @@ Cache Control：HTTP缓存控制指令，包括max-age、no-cache、no-store等�
 数据协商
 
 Redirect
+
+Content-Security-Policy 内容安全策略
+限制资源获取
+报告资源获取越权
