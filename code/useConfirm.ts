@@ -15,12 +15,14 @@ const useConfirm = () => {
         tip: null,
     })
     const [loading, setLoading] = useState<boolean>(false)
+
     useEffect(() => {
         if (Object.keys(confirm?.params).length) {
             sendRequest()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [confirm])
+
     async function sendRequest() {
         setLoading(true)
         try {
@@ -38,6 +40,7 @@ const useConfirm = () => {
             setLoading(false)
         }
     }
+
     return { setConfirm, loading }
 }
 
