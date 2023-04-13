@@ -10,7 +10,7 @@
 - [提交操作自定义hooks](https://github.com/randomtc/study-notes/blob/main/code/useConfirm.ts)
 - [禁止鼠标滚动事件](https://github.com/randomtc/study-notes/issues/5)
 - [清除定时器失败](https://github.com/randomtc/study-notes/issues/6)
-- [清除定时器失败](https://github.com/randomtc/study-notes/issues/7)
+- [下载本地excel表格并上传](https://github.com/randomtc/study-notes/issues/7)
 
 ## js系列
 - [统计字符串出现次数](https://github.com/randomtc/study-notes/issues/4)
