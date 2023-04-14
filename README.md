@@ -15,6 +15,6 @@
 ## js系列
 - [统计字符串出现次数](https://github.com/randomtc/study-notes/issues/4)
 
-
+## [axios](https://github.com/randomtc/study-notes/issues/8)
 
 
