@@ -14,6 +14,8 @@
 
 ## js系列
 - [统计字符串出现次数](https://github.com/randomtc/study-notes/issues/4)
+- [过滤对象数据中的null undefind " " 的值](https://github.com/randomtc/study-notes/issues/9)
+
 
 ## [axios](https://github.com/randomtc/study-notes/issues/8)
 
