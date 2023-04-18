@@ -14,20 +14,20 @@
  */
 import { useEffect, useState } from "react"
 
-type ResData<T> = {
+interface ResData<T> {
   lists: T[]
   total?: number
   [k: string]: any
 }
 
-type Res<T> = {
+interface Res<T> {
   code: number
   data: ResData<T>
   message?: string
   [k: string]: any
 }
 
-type UseGetDataReturn<T> = {
+interface UseGetDataReturn<T> {
   params: Record<string, any>
   setParams: React.Dispatch<React.SetStateAction<Record<string, any>>>
   data?: ResData<T>
