@@ -1,15 +1,16 @@
 /**
  * 函数参数
- * @param  networkRequest   网络请求
- * @param  addParams        添加参数
- * @param  params.notSend   控制是否发送请求 默认发送
+ * @param  networkRequest        网络请求
+ * @param  varargs               可变参数，可使用setParame更改
+ * @param  immutableArgs         不可变参数，不可使用setParame更改
+ * @param  immutableArgs.notSend 控制是否发送请求 默认发送
  * 返回参数
  * @returnParams
- * @param  parame           请求参数
- * @param  setParame        设置参数
- * @param  data             请求成功数据
- * @param  trigger          重新请求的开关
- * @param  loading          请求状态
+ * @param  parame                请求参数
+ * @param  setParame             设置参数
+ * @param  data                  请求成功数据
+ * @param  trigger               重新请求的开关
+ * @param  loading               请求状态
  */
 import { useEffect, useState } from "react"
 
@@ -28,25 +29,26 @@ type Res<T> = {
 
 const useGetData = <T>(
   networkRequest: any,
-  addParams?: Record<string, any>
+  varargs?: Record<string, any>,
+  immutableArgs?: Record<string, any>
 ) => {
-  const [data, setData] = useState<ResData<T>>()
   const [params, setParams] = useState<Record<string, any>>({
     page: 1,
     page_size: 10,
-    ...addParams,
+    ...varargs,
   })
   const [trigger, setTrigger] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
+  const [data, setData] = useState<ResData<T>>()
 
   useEffect(() => {
-    !params?.notSend && sendRequest()
+    !immutableArgs?.notSend && sendRequest()
   }, [params, trigger])
 
   async function sendRequest() {
     setLoading(true)
     try {
-      const res: Res<T> = await networkRequest(params)
+      const res: Res<T> = await networkRequest({ ...params, ...immutableArgs })
       if (res?.code === 200) {
         setData(res?.data)
       } else {
