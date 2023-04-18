@@ -2,6 +2,7 @@
  * 函数参数
  * @param  networkRequest   网络请求
  * @param  addParams        添加参数
+ * @param  params.notSend   控制是否发送请求 默认发送
  * 返回参数
  * @returnParams
  * @param  parame           请求参数
@@ -39,7 +40,7 @@ const useGetData = <T>(
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    params?.isSend && sendRequest()
+    !params?.notSend && sendRequest()
   }, [params, trigger])
 
   async function sendRequest() {
