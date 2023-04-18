@@ -15,7 +15,7 @@
 import { useEffect, useState } from "react"
 
 type ResData<T> = {
-  data: T[]
+  lists: T[]
   total?: number
   [k: string]: any
 }
