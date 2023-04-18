@@ -20,13 +20,12 @@ const useConfirm = () => {
         if (Object.keys(confirm?.params).length) {
             sendRequest()
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [confirm])
 
     async function sendRequest() {
         setLoading(true)
         try {
-            const res: Resolve = await confirm?.request(confirm?.params)
+            const res = await confirm?.request(confirm?.params)
             if (res?.code === 200) {
                 confirm?.success()
                 message.success(confirm?.tip ?? '操作成功')

@@ -33,7 +33,6 @@ const useGetData = <T>(networkRequest: any, addParams?: Record<string, any>) => 
 
     useEffect(() => {
         sendRequest()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params, trigger])
 
     async function sendRequest() {
