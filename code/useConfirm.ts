@@ -8,7 +8,7 @@
 import { useEffect, useState } from "react"
 import { message } from "antd"
 
-interface Confirm {
+interface ConfirmType {
   request?: (params?: Record<string, any>) => Promise<any> | void
   params: Record<string, any>
   success?: () => void
@@ -16,12 +16,12 @@ interface Confirm {
 }
 
 interface UseConfirmReturn {
-  setConfirm: React.Dispatch<React.SetStateAction<Confirm>>
+  setConfirm: React.Dispatch<React.SetStateAction<ConfirmType>>
   loading: boolean
 }
 
 const useConfirm = (): UseConfirmReturn => {
-  const [confirm, setConfirm] = useState<Confirm>({
+  const [confirm, setConfirm] = useState<ConfirmType>({
     request: () => {},
     params: {},
     success: () => {},
