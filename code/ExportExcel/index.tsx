@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx'
 interface Data {
     Name: string
     Age: number
+    [k:string]:any
 }
 
 function exportToExcel(data: Data[], filename: string): void {
