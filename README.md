@@ -13,7 +13,7 @@
 - [下载本地excel表格并上传](https://github.com/randomtc/study-notes/issues/7)
 - [React中事件处理函数写法](https://github.com/randomtc/study-notes/issues/10)
 - [React中设置环境变量 ](https://github.com/randomtc/study-notes/issues/12)
-- [React中引入静态图片的两种方式(CommonJS 模块和ES6模块的区别) ](https://github.com/randomtc/study-notes/issues/14)
+- [React中引入静态图片的两种方式  ( CommonJS 模块和ES6模块的区别 ) ](https://github.com/randomtc/study-notes/issues/14)
 
 
 ## js系列
