@@ -11,8 +11,10 @@
 - [禁止鼠标滚动事件](https://github.com/randomtc/study-notes/issues/5)
 - [清除定时器失败](https://github.com/randomtc/study-notes/issues/6)
 - [下载本地excel表格并上传](https://github.com/randomtc/study-notes/issues/7)
-- [react中事件处理函数写法](https://github.com/randomtc/study-notes/issues/10)
-- [react中设置环境变量 ](https://github.com/randomtc/study-notes/issues/12)
+- [React中事件处理函数写法](https://github.com/randomtc/study-notes/issues/10)
+- [React中设置环境变量 ](https://github.com/randomtc/study-notes/issues/12)
+- [React中引入静态图片的两种方式 ](https://github.com/randomtc/study-notes/issues/14)
+
 
 ## js系列
 - [统计字符串出现次数](https://github.com/randomtc/study-notes/issues/4)
