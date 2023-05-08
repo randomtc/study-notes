@@ -27,7 +27,6 @@
 ## ts 系列
 
 - [开发中碰见的 ts 问题](https://github.com/randomtc/study-notes/issues/11)
-- [开发中碰见的 ts 问题](https://github.com/randomtc/study-notes/issues/15)
 
 
 ## [axios](https://github.com/randomtc/study-notes/issues/8)
