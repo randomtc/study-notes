@@ -12,7 +12,7 @@
  * @param  trigger               重新请求的开关
  * @param  loading               请求状态
  */
-import { useEffect, useState } from "react"
+import React from "react"
 
 interface ResData<T> {
   lists: T[]
@@ -41,20 +41,16 @@ const useGetData = <T>(
   varargs?: Record<string, any>,
   immutableArgs?: { notSend?: boolean; [k: string]: any }
 ): UseGetDataReturn<T> => {
-  const [params, setParams] = useState<Record<string, any>>({
+  const [params, setParams] = React.useState<Record<string, any>>({
     page: 1,
     page_size: 10,
     ...varargs,
   })
-  const [trigger, setTrigger] = useState<boolean>(false)
-  const [loading, setLoading] = useState<boolean>(false)
-  const [data, setData] = useState<ResData<T>>()
+  const [trigger, setTrigger] = React.useState<boolean>(false)
+  const [loading, setLoading] = React.useState<boolean>(false)
+  const [data, setData] = React.useState<ResData<T>>()
 
-  useEffect(() => {
-    !immutableArgs?.notSend && sendRequest()
-  }, [params, trigger])
-
-  async function sendRequest() {
+  const sendRequest = React.useCallback(async () => {
     setLoading(true)
     try {
       const res: Res<T> = await networkRequest({ ...params, ...immutableArgs })
@@ -68,9 +64,24 @@ const useGetData = <T>(
     } finally {
       setLoading(false)
     }
-  }
+  }, [networkRequest, params, immutableArgs])
 
-  return { params, setParams, data, trigger, setTrigger, loading }
+  React.useEffect(() => {
+    !immutableArgs?.notSend && sendRequest()
+  }, [params, trigger, immutableArgs, sendRequest])
+
+  const returnObject: UseGetDataReturn<T> = React.useMemo(() => {
+    return {
+      params,
+      setParams,
+      data,
+      trigger,
+      setTrigger,
+      loading,
+    }
+  }, [params, data, trigger, loading, setParams, setTrigger])
+
+  return returnObject
 }
 
 export default useGetData

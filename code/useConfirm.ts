@@ -5,7 +5,7 @@
  * @param  tip         提示信息
  * @param  loading     请求状态
  */
-import { useEffect, useState } from "react"
+import React from "react"
 import { message } from "antd"
 
 interface ConfirmType {
@@ -21,21 +21,15 @@ interface UseConfirmReturn {
 }
 
 const useConfirm = (): UseConfirmReturn => {
-  const [confirm, setConfirm] = useState<ConfirmType>({
+  const [confirm, setConfirm] = React.useState<ConfirmType>({
     request: () => {},
     params: {},
     success: () => {},
     tip: null,
   })
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = React.useState<boolean>(false)
 
-  useEffect(() => {
-    if (Object.keys(confirm?.params).length) {
-      sendRequest()
-    }
-  }, [confirm])
-
-  async function sendRequest() {
+  const sendRequest = React.useCallback(async () => {
     setLoading(true)
     try {
       const res = await confirm?.request!(confirm?.params)
@@ -51,7 +45,13 @@ const useConfirm = (): UseConfirmReturn => {
       setConfirm({ params: {} })
       setLoading(false)
     }
-  }
+  }, [confirm])
+
+  React.useEffect(() => {
+    if (Object.keys(confirm?.params).length) {
+      sendRequest()
+    }
+  }, [confirm, sendRequest])
 
   return { setConfirm, loading }
 }
