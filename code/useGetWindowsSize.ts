@@ -2,7 +2,7 @@
 
 import React from "react"
 
-const useGetSize = () => {
+const useGetWindowsSize = () => {
   const [obj, setObj] = React.useState<Record<string, string | number>>()
 
   const getSize = React.useCallback(() => {
@@ -22,4 +22,4 @@ const useGetSize = () => {
   return obj
 }
 
-export default useGetSize
+export default useGetWindowsSize
