@@ -67,19 +67,24 @@ const useGetData = <T>(
   }, [networkRequest, params, immutableArgs])
 
   React.useEffect(() => {
-    !immutableArgs?.notSend && sendRequest()
+    if (!immutableArgs?.notSend) {
+      sendRequest()
+    }
   }, [params, trigger, immutableArgs, sendRequest])
 
-  const returnObject: UseGetDataReturn<T> = React.useMemo(() => {
-    return {
+  React.useCallback(sendRequest, [networkRequest, params, immutableArgs])
+
+  const returnObject: UseGetDataReturn<T> = React.useMemo(
+    () => ({
       params,
       setParams,
       data,
       trigger,
       setTrigger,
       loading,
-    }
-  }, [params, data, trigger, loading, setParams, setTrigger])
+    }),
+    [params, data, trigger, loading, setParams, setTrigger]
+  )
 
   return returnObject
 }
