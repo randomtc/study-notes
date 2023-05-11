@@ -72,8 +72,6 @@ const useGetData = <T>(
     }
   }, [params, trigger, immutableArgs, sendRequest])
 
-  React.useCallback(sendRequest, [networkRequest, params, immutableArgs])
-
   const returnObject: UseGetDataReturn<T> = React.useMemo(
     () => ({
       params,
