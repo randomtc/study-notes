@@ -9,7 +9,7 @@
 
 ## React 系列
 
-### 自定义 hooks
+#### 自定义 hooks
 
 - [请求数据](https://github.com/randomtc/study-notes/blob/main/code/useGetData.ts)
 - [提交操作](https://github.com/randomtc/study-notes/blob/main/code/useConfirm.ts)
@@ -17,7 +17,7 @@
 - [监听窗口尺寸变化](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
 - [根据窗口尺寸响应式布局](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
 
-### 其他
+#### 其他
 
 - [禁止鼠标滚动事件](https://github.com/randomtc/study-notes/issues/5)
 - [清除定时器失败](https://github.com/randomtc/study-notes/issues/6)
