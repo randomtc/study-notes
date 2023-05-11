@@ -32,7 +32,7 @@ const useConfirm = (): UseConfirmReturn => {
   const sendRequest = React.useCallback(async () => {
     setLoading(true)
     try {
-      const res = await confirm?.request!(confirm?.params)
+      const res = await confirm?.request?.(confirm?.params)
       if (res?.code === 200) {
         confirm?.success!()
         message.success(confirm?.tip ?? "操作成功")
