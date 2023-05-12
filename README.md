@@ -40,3 +40,4 @@
 ## 其他
 
 - [框架路由](https://github.com/randomtc/study-notes/issues/13)
+- [请求获取blob流数据并展示](https://github.com/randomtc/study-notes/issues/16)
