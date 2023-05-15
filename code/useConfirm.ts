@@ -11,7 +11,7 @@ import { message } from "antd"
 interface ConfirmType {
   request?: (params?: Record<string, any>) => Promise<any> | void
   params: Record<string, any>
-  success?: () => void
+  success?: (...set:any) => void
   tip?: string | null
 }
 
@@ -34,7 +34,7 @@ const useConfirm = (): UseConfirmReturn => {
     try {
       const res = await confirm?.request?.(confirm?.params)
       if (res?.code === 200) {
-        confirm?.success!()
+        confirm?.success!(res)
         message.success(confirm?.tip ?? "操作成功")
       } else {
         console.error(res)
