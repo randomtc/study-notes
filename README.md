@@ -12,7 +12,7 @@
 #### 自定义 hooks
 
 - [请求数据](https://github.com/randomtc/study-notes/blob/main/code/useGetData.ts)
-- [提交操作](https://github.com/randomtc/study-notes/blob/main/code/useConfirm.ts)
+- [提交操作](https://github.com/randomtc/study-notes/blob/main/code/useSubmit.ts)
 - [倒计时](https://github.com/randomtc/study-notes/blob/main/code/useCountDown.ts)
 - [监听窗口尺寸变化](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
 - [根据窗口尺寸响应式布局](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
@@ -40,4 +40,4 @@
 ## 其他
 
 - [框架路由](https://github.com/randomtc/study-notes/issues/13)
-- [请求获取blob流数据并展示](https://github.com/randomtc/study-notes/issues/16)
+- [请求获取 blob 流数据并展示](https://github.com/randomtc/study-notes/issues/16)
