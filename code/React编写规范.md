@@ -55,15 +55,20 @@ Hooks-Admin
 ### 命名
 
 - 组件名：大驼峰 <br/>
-  <code><UserCenter /></code>
+  ```ts
+  import SearchForm from './SearchForm'
+  <SearchForm/>
+  ```
 - 组件内变量：小驼峰 <br/>
-  <code>
-  const [userNmae , setUserName] = useState<string>()<br/>
+  ```ts
+  const [userNmae , setUserName] = useState<string>() 
   const tokenKey = ''
-  </code>
-- 全局变量：全大写+下划线（config 文件里全用词命名方式） <br/>
-  <code>export const TOKEN_KEY = '' </code>
-
+   ```
+- 全局变量：全大写+下划线 <br/>
+  ```ts
+  // config 文件里全用此命名方式
+  export const TOKEN_KEY = ''
+  ```
 ### jsx
 
 - 事件统一使用 <br/>
