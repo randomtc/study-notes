@@ -60,7 +60,7 @@ Hooks-Admin
 - 函数统一使用 const 声明 <br/>
   `const fn = () => { }`
 
-- jsx 中 js 部分只能写一行 js 超过则令起函数声明
+- jsx 中 函数表达部分只能写一行 超过则令起函数声明
 
 ```ts
 const App = () => {
