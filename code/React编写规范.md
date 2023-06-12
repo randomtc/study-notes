@@ -52,13 +52,25 @@ Hooks-Admin
 └─ vite.config.ts         # vite 配置
 ```
 
+### 命名
+
+- 组件名：大驼峰 <br/>
+  <code><UserCenter /></code>
+- 组件内变量：小驼峰 <br/>
+  <code>
+  const [userNmae , setUserName] = useState<string>()<br/>
+  const tokenKey = ''
+  </code>
+- 全局变量：全大写+下划线（config 文件里全用词命名方式） <br/>
+  <code>export const TOKEN_KEY = '' </code>
+
 ### jsx
 
 - 事件统一使用 <br/>
-  `<div onClick={id => onDele(id)}>`
+  <code><div onClick={id => onDele(id)}></code>
 
 - 函数统一使用 const 声明 <br/>
-  `const fn = () => { }`
+  <code>const fn = () => { }</code>
 
 - jsx 中 函数表达部分只能写一行 超过则令起函数声明
 
