@@ -57,7 +57,7 @@ Hooks-Admin
 - 组件名：大驼峰 <br/>
   ```ts
   import SearchForm from "./SearchForm"
-  ;<SearchForm />
+  <SearchForm />
   ```
 - 组件内变量：小驼峰 <br/>
   ```ts
@@ -110,8 +110,8 @@ Hooks-Admin
   <Component />
 
   //bad
-   <Component></Component>
-   <Component/>
+  <Component></Component>
+  <Component/>
   ```
 
 - 事件统一使用 <br/>
@@ -121,8 +121,8 @@ Hooks-Admin
   <div onClick={id => onDele(id)}>
 
   //bad
-   <div onClick={onDele(id)}>
-   <div onClick={onDele}>
+  <div onClick={onDele(id)}>
+  <div onClick={onDele}>
   ```
 
 - 函数统一使用 const 声明 使用小驼峰命名<br/>
