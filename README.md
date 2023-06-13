@@ -9,12 +9,13 @@
 
 ## React 系列
 
-#### [React编写规范](https://github.com/randomtc/study-notes/blob/main/code/React%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83.md)
+#### [React 编写规范](https://github.com/randomtc/study-notes/blob/main/code/React%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83.md)
 
 #### 自定义 hooks
 
-- [请求数据](https://github.com/randomtc/study-notes/blob/main/code/useGetData.ts)
-- [提交操作](https://github.com/randomtc/study-notes/blob/main/code/useSubmit.ts)
+- [请求数据](./code/hooks/useGetData.ts)
+- [提交操作](./code/hooks/useSubmit.ts)
+- [获取信息](./code/hooks/useGetInfo.ts)
 - [倒计时](https://github.com/randomtc/study-notes/blob/main/code/useCountDown.ts)
 - [监听窗口尺寸变化](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
 - [根据窗口尺寸响应式布局](https://github.com/randomtc/study-notes/blob/main/code/useGetWindowsSize.ts)
@@ -44,4 +45,3 @@
 - [框架路由](https://github.com/randomtc/study-notes/issues/13)
 - [请求获取 blob 流数据并展示](https://github.com/randomtc/study-notes/issues/16)
 - [生成公钥并配置](https://github.com/randomtc/study-notes/blob/main/code/%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E5%B9%B6%E9%85%8D%E7%BD%AEgithub.md)
-

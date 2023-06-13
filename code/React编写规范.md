@@ -55,16 +55,21 @@ Hooks-Admin
 ### 命名
 
 - 组件名：大驼峰 <br/>
+
   ```ts
   import SearchForm from "./SearchForm"
-  <SearchForm />
+  ;<SearchForm />
   ```
+
 - 组件内变量：小驼峰 <br/>
+
   ```ts
   const [userNmae, setUserName] = useState<string>()
   const tokenKey = ""
   ```
+
 - 全局变量：全大写+下划线 <br/>
+
   ```ts
   // config 文件里全用此命名方式
   export const TOKEN_KEY = ""
@@ -79,7 +84,7 @@ Hooks-Admin
   const App = () => {
     //内置React 或者第三方库antd等
     import React, { FC, useState } from "react"
-    import { Space, Button, message, notification } from "antd"
+    import { Space, Button, message } from "antd"
     import { useNavigate } from "react-router-dom"
     import { useSelector } from "react-redux"
 
@@ -149,3 +154,5 @@ const App = () => {
   )
 }
 ```
+
+linter
