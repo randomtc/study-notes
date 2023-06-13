@@ -9,6 +9,8 @@
 
 ## React 系列
 
+#### [React编写规范](https://github.com/randomtc/study-notes/blob/main/code/React%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83.md)
+
 #### 自定义 hooks
 
 - [请求数据](https://github.com/randomtc/study-notes/blob/main/code/useGetData.ts)
