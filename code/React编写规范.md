@@ -56,25 +56,76 @@ Hooks-Admin
 
 - 组件名：大驼峰 <br/>
   ```ts
-  import SearchForm from './SearchForm'
-  <SearchForm/>
+  import SearchForm from "./SearchForm"
+  ;<SearchForm />
   ```
 - 组件内变量：小驼峰 <br/>
   ```ts
-  const [userNmae , setUserName] = useState<string>() 
-  const tokenKey = ''
-   ```
+  const [userNmae, setUserName] = useState<string>()
+  const tokenKey = ""
+  ```
 - 全局变量：全大写+下划线 <br/>
   ```ts
   // config 文件里全用此命名方式
-  export const TOKEN_KEY = ''
+  export const TOKEN_KEY = ""
   ```
+
 ### jsx
 
-- 事件统一使用 <br/>
-  <code><div onClick={id => onDele(id)}></code>
+- 文件导入规则<br/>
 
-- 函数统一使用 const 声明 <br/>
+  ```ts
+  //分为三块 中间空格隔开
+  const App = () => {
+    //内置React 或者第三方库antd等
+    import React, { FC, useState } from "react"
+    import { Space, Button, message, notification } from "antd"
+    import { useNavigate } from "react-router-dom"
+    import { useSelector } from "react-redux"
+
+    //外部文件导入components，hooks等
+    import { CustomTable, CustomUpload } from "@/components"
+    import { useGetData, useSubmit } from "@/hooks"
+    import { getList, addList } from "@/api/oldmanmanage"
+
+    //此文件夹内导入
+    import SearchForm from "./SearchForm"
+    import columns from "./columns"
+    import { TableData } from "./types"
+    import "index.less"
+
+    return (
+      <>
+        <SearchForm />
+        <CustomTable />
+      <>
+    )
+  }
+  ```
+
+- 没有子元素时，自闭合标签 在自闭标签之前留一个空格<br/>
+
+  ```ts
+  //good
+  <Component />
+
+  //bad
+   <Component></Component>
+   <Component/>
+  ```
+
+- 事件统一使用 <br/>
+
+  ```ts
+  //good
+  <div onClick={id => onDele(id)}>
+
+  //bad
+   <div onClick={onDele(id)}>
+   <div onClick={onDele}>
+  ```
+
+- 函数统一使用 const 声明 使用小驼峰命名<br/>
   <code>const fn = () => { }</code>
 
 - jsx 中 函数表达部分只能写一行 超过则令起函数声明
