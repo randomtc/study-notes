@@ -40,7 +40,7 @@ const useGetInfo = (props: UseGetInfoProps) => {
       getData()
     }
   }, [])
-  return [data, getData, loading]
+  return { data, getData, loading }
 }
 
 export default useGetInfo
