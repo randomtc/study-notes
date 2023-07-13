@@ -29,6 +29,7 @@
 - [React 中设置环境变量 ](https://github.com/randomtc/study-notes/issues/12)
 - [React 中引入静态图片的两种方式 ( CommonJS 模块和 ES6 模块的区别 ) ](https://github.com/randomtc/study-notes/issues/14)
 - [react keepalive](https://github.com/CJY0208/react-activation/issues/225)
+- [记录react开发中的一个小问题 ](https://github.com/randomtc/study-notes/issues/17)
 
 ## js 系列
 
