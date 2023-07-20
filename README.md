@@ -47,3 +47,4 @@
 - [框架路由](https://github.com/randomtc/study-notes/issues/13)
 - [请求获取 blob 流数据并展示](https://github.com/randomtc/study-notes/issues/16)
 - [生成公钥并配置](./code/MD/%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E5%B9%B6%E9%85%8D%E7%BD%AEgithub.md)
+- [浏览器自动播放策略](https://github.com/randomtc/study-notes/issues/18)
