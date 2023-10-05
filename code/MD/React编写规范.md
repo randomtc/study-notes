@@ -129,7 +129,7 @@ Hooks-Admin
   <div onClick={onDele(id)}>
   <div onClick={onDele}>
   ```
-  [原因](https://github.com/randomtc/study-notes/issues/10)
+  [三种写法的比较](https://github.com/randomtc/study-notes/issues/10)
   
 - 函数统一使用 const 声明 使用小驼峰命名<br/>
   <code>const fn = () => { }</code>
