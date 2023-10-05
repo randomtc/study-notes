@@ -49,4 +49,4 @@
 - [生成公钥并配置](./code/MD/%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E5%B9%B6%E9%85%8D%E7%BD%AEgithub.md)
 - [浏览器自动播放策略](https://github.com/randomtc/study-notes/issues/18)
 - [拟标题，浏览器连接蓝牙读取信息WebBluetooth api](https://github.com/randomtc/study-notes/issues/18)
-- [浏览器自动播放策略](https://github.com/randomtc/study-notes/issues/18)
+- [拟标题，浏览器只能在本地或者https环境下测试](https://github.com/randomtc/study-notes/issues/18)
