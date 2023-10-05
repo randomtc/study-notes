@@ -20,7 +20,6 @@ Hooks-Admin
 │  ├─ pages               # 项目所有页面
 │  ├─ routers             # 路由管理
 │  ├─ redux               # redux store
-│  ├─ styles              # 全局样式
 │  ├─ typings             # 全局 ts 声明
 │  ├─ utils               # 工具库
 |     |—— index.ts        # 工具库统一导出路径
