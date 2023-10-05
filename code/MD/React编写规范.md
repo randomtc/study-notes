@@ -58,7 +58,9 @@ Hooks-Admin
 
   ```ts
   import SearchForm from "./SearchForm"
-  ;<SearchForm />
+  const App = () => {
+      return <SearchForm />
+  }
   ```
 
 - 组件内变量：小驼峰 <br/>
@@ -82,7 +84,7 @@ Hooks-Admin
   ```ts
   //分为三块 中间空格隔开
   const App = () => {
-    //内置React 或者第三方库antd等
+    //内置React 或者第三方库例如：antd等
     import React, { FC, useState } from "react"
     import { Space, Button, message } from "antd"
     import { useNavigate } from "react-router-dom"
