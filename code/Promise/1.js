@@ -50,3 +50,14 @@ sendMEssage('张三',
  * 
  * 4、可以针对任务进行后继处理，针对完成状态的后继处理成为onFulfilled,针对失败后继处理称之为onRejected
  */
+
+async function m() {
+    const n = await 1
+    console.log(n);
+}
+
+function mCopy() {
+    return Promise.resolve(1).then(n => {
+        console.log(n);
+    })
+}
