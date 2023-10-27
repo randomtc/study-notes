@@ -68,3 +68,19 @@ export default function ImportModal(props: Props) {
  * @param  data: 指定上传文件时需要传递的其他数据。在这个示例中，我们向服务器传递了一个名为source的参数，它的值是一个字符串，包含了上传文件的日期信息。
  * @param  beforeUpload: 在上传之前的回调函数，它接收一个文件对象参数。在这个示例中，我们在上传之前调用了一个函数getFileList，用于在上传之前向父组件传递文件信息，并阻止了默认的上传行为（因为我们需要在上传之前处理文件）。
  **/
+
+    //开始扫码分析
+    function decodeFromInputVideoFunc(firstDeviceId) {
+      // firstDeviceId  为null 时默认选择面向环境的摄像头
+      codeReader.decodeFromVideoDevice(firstDeviceId, 'video',
+          async (result, err) => {
+              if (result) { 
+              /**************扫码成功后做业务逻辑***********/
+             
+              }
+              if (err) {
+                  // console.error(err);
+              }
+          }
+      )
+  }

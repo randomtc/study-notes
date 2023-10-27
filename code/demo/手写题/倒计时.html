@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let num = 10
+    const countDown = () => {
+      const time = setInterval(() => {
+        console.log(num);
+        num = num - 1
+        if(num===0){
+            clearInterval(time)
+            console.log('已经结束了！');
+        }
+        }, 1000)
+    }
+    countDown()
+</script>
