@@ -6,25 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+</style>
 
 <body>
-
+    <div id="box">click</div>
 </body>
 
 </html>
 <script>
+    const div = document.getElementById('box')
+
     let num = 10
-    const countDown = () => {
-        const time = setInterval(() => {
-            console.log(num);
-            num = num - 1
-            if (num === 0) {
-                clearInterval(time)
-                console.log('已经结束了！');
+    function countTime() {
+        const timer = setInterval(() => {
+            num--
+            div.innerText = `还有${num}秒`
+            if (num <= 0) {
+                clearInterval(timer)
+                num = 10
+                div.innerHTML = Math.random() > 0.5 ? '恭喜您中奖' : "很遗憾您没有中奖"
             }
         }, 1000)
     }
-    countDown()
-
+    div.addEventListener('click', () => {
+        div.innerText = `还有${num}秒`
+        countTime()
+    })
 
 </script>
