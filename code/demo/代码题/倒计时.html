@@ -15,14 +15,16 @@
 <script>
     let num = 10
     const countDown = () => {
-      const time = setInterval(() => {
-        console.log(num);
-        num = num - 1
-        if(num===0){
-            clearInterval(time)
-            console.log('已经结束了！');
-        }
+        const time = setInterval(() => {
+            console.log(num);
+            num = num - 1
+            if (num === 0) {
+                clearInterval(time)
+                console.log('已经结束了！');
+            }
         }, 1000)
     }
     countDown()
+
+
 </script>
