@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const arr = [1, 2, 1, 2, 5, 3, 4, 2, 3, 1, 8, 8, 7, 6]
+
+    function fn(arr) {
+
+        const obj = {}
+
+        for (const item of arr) {
+            if (obj[item]) {
+                obj[item]++
+            } else {
+                obj[item] = 1
+            }
+        }
+
+        const maxNum = Math.max(...Object.values(obj))
+
+        let maxItem;
+
+        for (let key in obj) {
+            if (obj[key] === maxNum) {
+                maxItem = { [key]: maxNum, ...maxItem }
+            }
+        }
+
+        // console.log(maxItem);
+
+        return { '每项出现的次数': obj, '出现最多的项': maxItem }
+    }
+
+
+    var frequencySort = function (s) {
+        const arr = String(s).split('')
+        const obj = {}
+        for (let i = 0; i < arr.length; i++) {
+            let item = arr[i]
+            if (obj[item]) {
+                obj[item]++
+            } else {
+                obj[item] = 1
+            }
+        }
+        const objSort = Object.entries(obj).sort((a, b) => b[1] - a[1])
+
+        let str = ''
+        objSort.forEach(item => {
+            for (let i = 0; i < item[1]; i++) {
+                str = str + item[0]
+            }
+        })
+        return str
+
+    };
+    console.log(frequencySort("2a554442f544asfasssffffasss"));
+
+
+</script>

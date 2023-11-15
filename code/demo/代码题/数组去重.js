@@ -11,3 +11,4 @@ const fn2 = arr => {
 }
 const fn3 = arr => arr.filter((item, index, array) => array.indexOf(item) === index)
 console.log(fn3(arr));
+

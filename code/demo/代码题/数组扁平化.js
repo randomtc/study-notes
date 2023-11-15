@@ -3,8 +3,11 @@ function flatArr(arr) {
     arr.forEch(item => {
         if (Array.isArray(item)) {
             newArr = newArr.concat(flatArr(item))
-        }else{
+        } else {
             newArr.push(item)
         }
     })
 }
+
+
+

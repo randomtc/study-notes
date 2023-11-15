@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    //防抖
+    function fun(fn, wait) {
+        let timer
+        return function (...args) {
+            const _this = this
+            if (timer) clearTimeout(timer)
+            setTimeout(() => {
+                fn.apply(_this, args)
+            }, wait)
+        }
+    }
+
+    //节流
+    function fun1(fn, wait) {
+        let timer
+        return function (...args) {
+            const nowTime = +new Date()
+            if (nowTime - timer >= wait) {
+                fn.apply(this, args)
+            }
+        }
+    }
+
+    //数据深拷贝
+    function clone(obj, map = new Map()) {
+        if (typeof obj !== "object" || obj === null) return obj
+        const newObj = Array.isArray(obj) ? [] : {}
+        if (map.get(obj)) return map.get(obj)
+        map.set(obj, newObj)
+        for (let key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                newObj[key] = clone(obj[key], map)
+            }
+        }
+        return newObj
+    }
+
+    let arr = [
+        { id: 1, name: '部门1', pid: 0 },
+        { id: 2, name: '部门2', pid: 1 },
+        { id: 3, name: '部门3', pid: 1 },
+        { id: 4, name: '部门4', pid: 3 },
+        { id: 5, name: '部门5', pid: 4 },
+    ]
+    function arrToTree(arr, pid = 0) {
+        const newArr = []
+        for (const item of arr) {
+            if (item.pid === pid) {
+                newArr.push(item)
+                const children = arrToTree(arr, item.id)
+                if (children.length > 0) {
+                    newArr.children = children
+                }
+            }
+        }
+        return newArr
+    }
+
+
+    //   [...new Set(arr)]
+    const fn4 = arr = arr.filter((item, idx, array) => array.indexOf(item) === idx)
+    const filterArr = arr => {
+        const newArr = []
+        for (const item of arr) {
+            if (!newArr.includes(item)) {
+                newArr.push(item)
+            }
+        }
+    }
+</script>
