@@ -18,21 +18,21 @@
     function fun(fn, wait) {
         let timer
         return function (...args) {
-            const _this = this
             if (timer) clearTimeout(timer)
-            setTimeout(() => {
-                fn.apply(_this, args)
-            }, wait)
+            timer = setTimeout(() => {
+                fn.apply(this, args)
+            }, wait);
         }
     }
 
     //节流
     function fun1(fn, wait) {
-        let timer
+        let time
         return function (...args) {
             const nowTime = +new Date()
-            if (nowTime - timer >= wait) {
+            if (nowTime - time >= wait) {
                 fn.apply(this, args)
+                time = nowTime
             }
         }
     }
@@ -59,12 +59,13 @@
         { id: 5, name: '部门5', pid: 4 },
     ]
     function arrToTree(arr, pid = 0) {
+       
         const newArr = []
         for (const item of arr) {
             if (item.pid === pid) {
                 newArr.push(item)
                 const children = arrToTree(arr, item.id)
-                if (children.length > 0) {
+                if (children.length) {
                     newArr.children = children
                 }
             }
@@ -82,5 +83,8 @@
                 newArr.push(item)
             }
         }
+        return newArr
     }
+
+
 </script>

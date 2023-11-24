@@ -17,6 +17,15 @@ interface UseGetInfoProps {
   notSend?: boolean
 }
 const useGetInfo = (props: UseGetInfoProps) => {
+
+  const Button = <T,>() => {
+    interface btnType {
+      type: 'link' | 'define' | 'deguer'
+      onClick: (...set: any) => void
+      className: ''
+    }
+  }
+
   const [data, setData] = React.useState<any>()
   const [loading, setLoading] = React.useState<boolean>()
   const getData = async () => {

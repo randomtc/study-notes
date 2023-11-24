@@ -26,7 +26,7 @@
             await sleep('黄', 1000)
         }
     }
-    fn()
+
 
     //依次发出十个异步请求，每个请求用上一个请求返回数据作为参数，返回最后一次请求结果
 
@@ -50,4 +50,12 @@
         }
         return lastRes
     }
+
+    function fnx(arr) {
+        const newArr = arr.filter(item => item !== 0)
+        const zeroArr = arr.filter(item => item === 0)
+        return [...newArr, ...zeroArr]
+    }
+
+    console.log(fnx([1, 2, 0, 4, 0, 0, 9, 0]));
 </script>
