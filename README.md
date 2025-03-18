@@ -22,6 +22,7 @@
 
 #### 其他
 - [React开发中的一个小问题 ](https://github.com/randomtc/study-notes/issues/17)
+- [循环中更新setState只会更新最后一项 ](https://github.com/randomtc/study-notes/issues/21)
 - [React 项目中配置 @ 路径别名 ](https://github.com/randomtc/study-notes/issues/20)
 - [React 中事件处理函数写法](https://github.com/randomtc/study-notes/issues/10)
 - [React 中设置环境变量 ](https://github.com/randomtc/study-notes/issues/12)
