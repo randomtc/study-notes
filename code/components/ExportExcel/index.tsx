@@ -5,6 +5,7 @@ interface Data {
     Name: string
     Age: number
     [k:string]:any
+
     
 }
 
