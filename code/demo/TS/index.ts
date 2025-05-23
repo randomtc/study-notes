@@ -153,3 +153,32 @@ type stateValueType = typeof state
 type stateKeyType = keyof typeof state;
 
 Object.values(arr3)
+
+
+declare module '*.less';
+declare module '*.svg';
+declare module 'react-resizable';
+
+declare module '@alipay/bigfish/react' {
+  import React from 'react';
+
+  export = React;
+}
+
+declare const PROXY_LINKE_URL: string;
+
+declare module '*.svg' {
+  import React = require('react');
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  const src: string;
+  export default src;
+}
+declare module '@alipay/bigfish/react' {
+  import * as React from 'react';
+  export = React;
+}
+
+declare module '@alipay/bigfish/antd' {
+  import * as antd from 'antd';
+  export = antd;
+}
