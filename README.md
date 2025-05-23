@@ -47,7 +47,7 @@
 
 - [框架路由](https://github.com/randomtc/study-notes/issues/13)
 - [请求获取 blob 流数据并展示](https://github.com/randomtc/study-notes/issues/16)
-- [生成公钥并配置](./code/MD/%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5%E5%B9%B6%E9%85%8D%E7%BD%AEgithub.md)
+- [Mac 生成 SSH 密钥，免密推送,绕过防火墙限制使用 443 端口](https://github.com/randomtc/study-notes/issues/22)
 - [浏览器自动播放策略](https://github.com/randomtc/study-notes/issues/18)
 - [拟标题，浏览器连接蓝牙读取信息WebBluetooth api](https://github.com/randomtc/study-notes/issues/18)
 - [拟标题，浏览器只能在本地或者https环境下测试](https://github.com/randomtc/study-notes/issues/18)
