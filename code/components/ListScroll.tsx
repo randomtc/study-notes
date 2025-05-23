@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ListScroll = () => {
-    const topDiv: any = React.useRef()
+    const topDiv: any = React.useRef();
     const timeRef: any = React.useRef()
     const [data, setData] = React.useState([1, 2, 3, 4, 5])
     React.useEffect(() => {
