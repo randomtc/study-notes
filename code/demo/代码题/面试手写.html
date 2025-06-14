@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>
 <script>
-    //实现红灯30s=>绿灯20s=>黄灯5s往复循环
-    function sleep(mag, wait) {
-        console.log(`${mag}灯亮起`);
-        return new Promise(resovle => setTimeout(resovle, wait))
+  //实现红灯30s=>绿灯20s=>黄灯5s往复循环
+  function sleep(mag, wait) {
+    console.log(`${mag}灯亮起`);
+    return new Promise((resovle) => setTimeout(resovle, wait));
+  }
+
+  async function fn() {
+    while (true) {
+      await sleep("红", 3000);
+      await sleep("绿", 2000);
+      await sleep("黄", 1000);
     }
+  }
 
-    async function fn() {
-        while (true) {
-            await sleep('红', 3000)
-            await sleep('绿', 2000)
-            await sleep('黄', 1000)
-        }
+  //依次发出十个异步请求，每个请求用上一个请求返回数据作为参数，返回最后一次请求结果
+
+  function send(url, dp) {
+    return new Promise((resovle) => {
+      setTimeout(() => {
+        console.log(`发出请求${url}`);
+        console.log(`返回数据${dp}`);
+        resovle({ code: 200, data: dp });
+      }, 1000);
+    });
+  }
+  async function fn1() {
+    let lastRes;
+    let dp = "";
+    for (let i = 0; i < 10; i++) {
+      const url = url + i;
+      const res = await send(url, dp + i);
+      lastRes = res?.data;
     }
+    return lastRes;
+  }
 
+  function fnx(arr) {
+    const newArr = arr.filter((item) => item !== 0);
+    const zeroArr = arr.filter((item) => item === 0);
+    return [...newArr, ...zeroArr];
+  }
 
-    //依次发出十个异步请求，每个请求用上一个请求返回数据作为参数，返回最后一次请求结果
+  console.log(fnx([1, 2, 0, 4, 0, 0, 9, 0]));
+  // 输入: nums = [2, 7, 11, 15], target = 9
+  // 输出: [0, 1]   // 因为 nums[0] + nums[1] = 2 + 7 = 9
 
-    function send(url, dp) {
-        return new Promise(resovle => {
-            setTimeout(() => {
-                console.log(`发出请求${url}`);
-                console.log(`返回数据${dp}`);
-                resovle({ code: 200, data: dp })
-            }, 1000)
-
-        })
-    }
-    async function fn1() {
-        let lastRes
-        let dp = ''
-        for (let i = 0; i < 10; i++) {
-            const url = url + i
-            const res = await send(url, dp + i)
-            lastRes = res?.data
-        }
-        return lastRes
-    }
-
-    function fnx(arr) {
-        const newArr = arr.filter(item => item !== 0)
-        const zeroArr = arr.filter(item => item === 0)
-        return [...newArr, ...zeroArr]
-    }
-
-    console.log(fnx([1, 2, 0, 4, 0, 0, 9, 0]));
+  const fn = (nums, target) => {
+    const map = new Map();
+    nums.forEach((item, index) => {
+      const rest = target - item;
+      if (map.has(rest)) {
+        return [map.get(rest), index];
+      }
+      map.set(item, index);
+    });
+  };
 </script>
