@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <input type="text" id="input">
-</body>
-
+  <body>
+    <input type="text" id="input" />
+  </body>
 </html>
 <script>
-    const input = document.getElementById('input')
+  const input = document.getElementById("input");
 
-    //防抖 触发事件，但是我一定在事件触发 n 秒后才执行，如果你在一个事件触发的 n 秒内又触发了这个事件，那我就以新的事件的时间为准
-    function debounce(fn, wait) {
-        let timer
-        return function () {
-            const _this = this  // 保存当前的 this 上下文
-            const args = arguments  // 保存当前函数的参数
+  //防抖 触发事件，但是我一定在事件触发 n 秒后才执行，如果你在一个事件触发的 n 秒内又触发了这个事件，那我就以新的事件的时间为准
+  function debounce(fn, wait) {
+    let timer;
+    return function () {
+      const _this = this; // 保存当前的 this 上下文
+      const args = arguments; // 保存当前函数的参数
 
-            if (timer) clearTimeout(timer)  // 如果存在计时器，则清除之前的计时器
+      if (timer) clearTimeout(timer); // 如果存在计时器，则清除之前的计时器
 
-            // 设置一个新的计时器，在等待时间 wait 后执行传入的函数 fn
-            timer = setTimeout(() => {
-                fn.apply(_this, args)
-            }, wait)
-        }
-    }
+      // 设置一个新的计时器，在等待时间 wait 后执行传入的函数 fn
+      timer = setTimeout(() => {
+        fn.apply(_this, args);
+      }, wait);
+    };
+  }
 
-    // input.oninput = onInput   //会频繁触发
+  const debouncePro = (fn, time) => {
+    let timeRef;
+    return (...args) => {
+      if (timeRef) clearTimeout(timeRef);
+      const _this = this;
+      timeRef = setTimeout(() => {
+        fn.apply(_this, args);
+      }, time);
+    };
+  };
 
-    input.oninput = debounce(onInput, 1000) //停止输入后一秒才执行
+  // input.oninput = onInput   //会频繁触发
 
-    function onInput(e) {
-        console.log(e);
-    }
+  input.oninput = debounce(onInput, 1000); //停止输入后一秒才执行
 
-
+  function onInput(e) {
+    console.log(e);
+  }
 </script>
