@@ -30,3 +30,16 @@ function deepCopy(obj, map = new Map()) {
 
     return newData
 }
+
+const deepCopyPro = (obj, map = new Map()) => {
+    if (obj === null || typeof obj !== 'object') return obj
+    const result = Array.isArray(obj) ? [] : {}
+    if (map.get(obj)) return map.get(obj)
+    map.set(obj, result)
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            result[key] = deepCopyPro(obj[key])
+        }
+    }
+    return result
+}

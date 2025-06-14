@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     #div {
-        width: 500px;
-        height: 500px;
-        background-color: red;
+      width: 500px;
+      height: 500px;
+      background-color: red;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div id="div"></div>
-</body>
-
+  </body>
 </html>
 <script>
-    const div = document.getElementById('div')
-    function fun(fn, wait) {
-        console.log(22222);
-        let time = 0
-        return function (...args) {
-            const _this = this
-            let nowTime = +new Date()
-            if (nowTime - time >= wait) {
-                fn.apply(_this, args)
-                time = nowTime
-            }
+  const div = document.getElementById("div");
+  function fun(fn, wait) {
+    console.log(22222);
+    let time = 0;
+    return function (...args) {
+      const _this = this;
+      let nowTime = +new Date();
+      if (nowTime - time >= wait) {
+        fn.apply(_this, args);
+        time = nowTime;
+      }
+    };
+  }
 
-        }
-    }
+  const throttle = (fn, delay) => {
+    let startTime;
+    return (...args) => {
+      const nowTime = Date.now();
+      if (nowTime - startTime >= delay) {
+        fn.apply(this, args);
+        startTime = nowTime;
+      }
+    };
+  };
 
-    div.onmousemove = fun(onMove, 1000)
+  div.onmousemove = fun(onMove, 1000);
 
-    function onMove(e) {
-        console.log(e);
-    }
+  function onMove(e) {
+    console.log(e);
+  }
 </script>

@@ -1,65 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>
 <script>
-    function myMap(arr, callBack) {
-        const newArr = []
-        for (let i = 0; i < arr.length; i++) {
-            newArr.push(callBack(arr[i], i, arr))
-        }
-        return newArr
+  const myMap = (arr, callBack) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      result.push(callBack(arr[i], i, arr));
     }
-    function myFilter(arr, callBack) {
-        const newArr = []
-        for (let i = 0; i < arr.length; i++) {
-            if (callBack(arr[i], i, arr)) {
-                newArr.push(arr[i])
-            }
-        }
-        return newArr
+    return result;
+  };
+
+  const myFilter = (arr, callBack) => {
+    const result = [];
+    if (callBack(arr[i], i, arr)) {
+      result.push(arr[i]);
     }
-    function myReduce(arr, callBack, iv) {
-        const acc = iv === undefined ? arr[0] : iv
-        for (let i = iv === undefined ? 1 : 0; i < arr.length; i++) {
-            acc = callBack(acc, arr[i], i, arr)
-        }
-        return acc
+    return result;
+  };
+
+  function myReduce(arr, callBack, iv) {
+    const acc = iv === undefined ? arr[0] : iv;
+    for (let i = iv === undefined ? 1 : 0; i < arr.length; i++) {
+      acc = callBack(acc, arr[i], i, arr);
     }
+    return acc;
+  }
 
-    function myFlat(arr, depth = 1) {
-        
-        if (depth === 0) return arr
-
-        let newArr = []
-
-        for (let i = 0; i < arr.length; i++) {
-            if (Array.isArray(arr[i])) {
-                newArr.push(...myFlat(arr[i], depth - 1))
-            } else {
-                newArr.push(arr[i])
-            }
-
-        }
-        return newArr
+  function myFlat(arr, depth = 1) {
+    if (depth === 0) return arr;
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        newArr.push(...myFlat(arr[i], depth - 1));
+      } else {
+        newArr.push(arr[i]);
+      }
     }
+    return newArr;
+  }
 
-    function myFind(arr, callBack) {
-        for (let i = 0; i < arr.length; i++) {
-            if (callBack(arr[i], i)) {
-                return arr[i]
-            }
-        }
+  function myFind(arr, callBack) {
+    for (let i = 0; i < arr.length; i++) {
+      if (callBack(arr[i], i)) {
+        return arr[i];
+      }
     }
-
+  }
 </script>

@@ -33,9 +33,8 @@
     let timeRef;
     return (...args) => {
       if (timeRef) clearTimeout(timeRef);
-      const _this = this;
       timeRef = setTimeout(() => {
-        fn.apply(_this, args);
+        fn.apply(this, args);
       }, time);
     };
   };

@@ -21,3 +21,16 @@ function flat(arr) {
     return newArr
 }
 
+
+const myFlat = (arr) => {
+    const result = []
+    for (const item of arr) {
+        if (Array.isArray(item)) {
+            result = result.concat(myFlat(item))
+        }else{
+        result.push(item)
+        }
+
+    }
+    return result
+}
