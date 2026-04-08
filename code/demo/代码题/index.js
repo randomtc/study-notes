@@ -19,6 +19,8 @@ console.log(fn(1234567222890));
 function fun(num) {
     const arr = String(num).split('')
     const newArr = []
+
+
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i])
         if (i === 0 || i % 3 === 0) {
