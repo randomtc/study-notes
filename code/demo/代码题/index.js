@@ -14,7 +14,6 @@ function fn(num) {
     return arr.join('') //方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔
 }
 console.log(fn(1234567222890));
-//你少
 
 function fun(num) {
     const arr = String(num).split('')
