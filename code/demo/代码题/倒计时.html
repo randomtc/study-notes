@@ -1,49 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     #box {
-        width: 200px;
-        height: 200px;
-        background-color: red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div id="box">click</div>
-</body>
-
+  </body>
 </html>
 <script>
-    const div = document.getElementById('box')
+  const div = document.getElementById("box");
 
-    let num = 10
-    function countTime() {
-        const timer = setInterval(() => {
-            num--
-            div.innerText = `还有${num}秒`
-            if (num <= 0) {
-                clearInterval(timer)
-                num = 10
-                div.innerHTML = Math.random() > 0.5 ? '恭喜您中奖' : "很遗憾您没有中奖"
-            }
-        }, 1000)
-    }
-    div.addEventListener('click', () => {
-        div.innerText = `还有${num}秒`
-        countTime()
-    })
+  let num = 10;
+  function countTime() {
+    const timer = setInterval(() => {
+      num--;
+      div.innerText = `还有${num}秒`;
+      if (num <= 0) {
+        clearInterval(timer);
+        num = 10;
+        div.innerHTML = Math.random() > 0.5 ? "恭喜您中奖" : "很遗憾您没有中奖";
+      }
+    }, 1000);
+  }
+  div.addEventListener("click", () => {
+    div.innerText = `还有${num}秒`;
+    countTime();
+  });
 
-  
-
-
+  //xxxxxx
 </script>
