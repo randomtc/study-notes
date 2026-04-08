@@ -18,7 +18,7 @@ let arr = [
 //                 "id": 2,
 //                 "name": "部门2",
 //                 "pid": 1hhh,
-//                 "childfffffren": []
+//                 "childfffffren": [1,2]
 //             },
 
 //             {
