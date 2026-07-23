@@ -4,7 +4,7 @@ const debounce = (fn, delay) => {
     return function (...args) {
         if (timeRef) clearTimeout(timeRef)
         timeRef = setTimeout(() => {
-            fn.apply(this, arges)
+            fn.apply(this, args)
         }, delay)
     }
 }
@@ -31,24 +31,23 @@ const myMap = (arr, callBack) => {
 
 const myFilter = (arr, callBack) => {
     const result = []
-
     for (let i = 0; i < arr.length; i++) {
         if (callBack(arr[i], i, arr)) {
             result.push(arr[i])
         }
     }
-
     return result
 }
 
 const myReduce = (arr, callBack, initVal) => {
-    const acc = initVal ?? arr[0]
+    let acc = initVal ?? arr[0]
     const startIndex = initVal ? 0 : 1
     for (let i = startIndex; i < arr.length; i++) {
         acc = callBack(acc, arr[i], i, arr)
     }
     return acc
 }
+
 
 const myFlat = (arr, depth = 1) => {
     if (depth === 0) return arr
@@ -113,4 +112,37 @@ const uniqueById1 = (arr) => {
     })
     return Array.from(map.values())
 }
+
+
+
+const s = [1, 2, 3, 1, 2, 4, 3]
+const list = [
+    { id: 1, name: 'A' },
+    { id: 2, name: 'B' },
+    { id: 1, name: 'aa' }, // 重复id
+    { id: 3, name: 'C' },
+    { id: 2, name: 'BB' }
+]
+const fn = (arr) => {
+    // const result = arr.reduce((map, item) => {
+    //     if (!map.has(item)) {
+    //         map.set(item, true)
+    //     }
+    //     return map
+    // }, new Map())
+    // return Array.from(result.keys())
+    const map = new Map()
+    arr.forEach(item => {
+        // if (!map.has(item.id)) {
+        //     map.set(item.id, item)
+        // }
+        if (!map.has(item.id)) {
+            map.set(item.id, item)
+        }
+
+    })
+    return Array.from(map.values())
+}
+console.log(fn(list));
+
 
